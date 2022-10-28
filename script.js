@@ -84,3 +84,58 @@ for (let i = 0; i < masyvas.length; i++) {
   skaicius = 0;
 }
 console.log(sum2);
+
+console.log(`------3 uzduotis--------`);
+
+let masyvas2 = [];
+let abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+for (let i = 0; i < 10; i++) {
+  masyvas2[i] = [];
+  let innerLength = 2 + Math.round(Math.random() * 18);
+  for (let y = 0; y < innerLength; y++) {
+    element = abc[Math.floor(Math.random() * 26)];
+    masyvas2[i][y] = element;
+  }
+}
+
+for (let i = 0; i < masyvas2.length; i++) {
+  masyvas2[i].sort();
+}
+console.log(masyvas2);
+
+// let xxx = ["H", "P", "X", "B"];
+// xxx.sort();
+// console.log(xxx);
+
+// for (let i = 0; i < masyvas2.length; i++) {
+//   for (let y = 0; y < masyvas2[i].length; y++) {
+//     for (let z = y + 1; z < masyvas2[i].length; z++) {
+//       if (masyvas2[i][y] > masyvas2[i][z]) {
+//         temp = masyvas[i][y];
+//         masyvas2[i][y] = masyvas2[i][z];
+//         masyvas2[i][z] = temp;
+//       }
+//     }
+//   }
+// }
+// console.log(masyvas2);
+
+console.log(`--------4 uzduotis------`);
+
+for (let i = 0; i < masyvas2.length; i++) {
+  for (let j = i + 1; j < masyvas2.length; j++) {
+    if (masyvas2[i].length > masyvas2[j].length) {
+      temp = masyvas2[i];
+      masyvas2[i] = masyvas2[j];
+      masyvas2[j] = temp;
+    }
+    if (masyvas2[j].indexOf("K") !== -1 && masyvas2[i].indexOf("K") == -1) {
+      temp = masyvas2[i];
+      masyvas2[i] = masyvas2[j];
+      masyvas2[j] = temp;
+    }
+  }
+}
+
+console.log(masyvas2);
