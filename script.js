@@ -139,3 +139,48 @@ for (let i = 0; i < masyvas2.length; i++) {
 }
 
 console.log(masyvas2);
+
+console.log(`------5 uzduotis ------`);
+
+let kazkoks = [];
+
+for (let i = 0; i < 30; i++) {
+  kazkoks[i] = {
+    user_id: Math.round(Math.random() * (1000000 - 1) + 1),
+    place_in_row: Math.round(Math.random() * 100),
+  };
+}
+console.log(kazkoks);
+
+console.log(`------6 uzduotis ------`);
+console.log(`------A------`);
+
+console.log(kazkoks.sort((a, b) => a.user_id - b.user_id));
+
+console.log(`------B------`);
+
+console.log(kazkoks.sort((a, b) => b.place_in_row - a.place_in_row));
+
+console.log(`--------7 uzduotis--------`);
+
+let lotyniskos = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghiijklmnopqrstuvwxyz";
+
+for (let i = 0; i < kazkoks.length; i++) {
+  namelength = Math.round(Math.random() * (15 - 5) + 5);
+  lastnamelength = Math.round(Math.random() * (15 - 5) + 5);
+
+  namestring = "";
+  lastnamestring = "";
+
+  for (let y = 0; y < namelength; y++) {
+    namestring += lotyniskos[Math.round(Math.random() * 52)];
+  }
+  for (let x = 0; x < lastnamelength; x++) {
+    lastnamestring += lotyniskos[Math.round(Math.random() * 52)];
+  }
+
+  names = { name: namestring, surname: lastnamestring };
+  Object.assign(kazkoks[i], names);
+}
+
+console.log(kazkoks);
